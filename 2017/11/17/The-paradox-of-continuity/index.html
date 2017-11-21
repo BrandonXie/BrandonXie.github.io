@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>连续性和悖论 | GodSpace | God&#39;s Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="物理,量子">
+    <meta name="description" content="存在 or 非存在古希腊有个学派叫做爱利亚派，其创建人名叫巴门尼德（Parmenides）。这位哲人对运动充满了好奇，但在他看来，运动是一种自相矛盾的行为，它不可能是真实的，而一定是一个假相。为什么呢？因为巴门尼德认为世界上只有一个唯一的“存在”，既然是唯一的存在，它就不可能有运动。因为除了“存在”就是“非存在”，“存在”怎么可能移动到“非存在”里面去呢？所以他认为“存在”是绝对静止的，而运动是荒">
+<meta name="keywords" content="物理,量子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="连续性和悖论">
+<meta property="og:url" content="http://godspace.cn/2017/11/17/The-paradox-of-continuity/index.html">
+<meta property="og:site_name" content="GodSpace">
+<meta property="og:description" content="存在 or 非存在古希腊有个学派叫做爱利亚派，其创建人名叫巴门尼德（Parmenides）。这位哲人对运动充满了好奇，但在他看来，运动是一种自相矛盾的行为，它不可能是真实的，而一定是一个假相。为什么呢？因为巴门尼德认为世界上只有一个唯一的“存在”，既然是唯一的存在，它就不可能有运动。因为除了“存在”就是“非存在”，“存在”怎么可能移动到“非存在”里面去呢？所以他认为“存在”是绝对静止的，而运动是荒">
+<meta property="og:updated_time" content="2017-11-17T05:50:01.877Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="连续性和悖论">
+<meta name="twitter:description" content="存在 or 非存在古希腊有个学派叫做爱利亚派，其创建人名叫巴门尼德（Parmenides）。这位哲人对运动充满了好奇，但在他看来，运动是一种自相矛盾的行为，它不可能是真实的，而一定是一个假相。为什么呢？因为巴门尼德认为世界上只有一个唯一的“存在”，既然是唯一的存在，它就不可能有运动。因为除了“存在”就是“非存在”，“存在”怎么可能移动到“非存在”里面去呢？所以他认为“存在”是绝对静止的，而运动是荒">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Brandon.Xie</h5>
+          <a href="mailto:brandon.xie@aliyun.com" title="brandon.xie@aliyun.com" class="mail">brandon.xie@aliyun.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/BrandonXie" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">连续性和悖论</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">连续性和悖论</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-17T03:00:48.000Z" itemprop="datePublished" class="page-time">
+  2017-11-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存在-or-非存在"><span class="post-toc-number">1.</span> <span class="post-toc-text">存在 or 非存在</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-The-paradox-of-continuity"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">连续性和悖论</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-17 11:00:48" datetime="2017-11-17T03:00:48.000Z"  itemprop="datePublished">2017-11-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="存在-or-非存在"><a href="#存在-or-非存在" class="headerlink" title="存在 or 非存在"></a>存在 or 非存在</h2><p>古希腊有个学派叫做爱利亚派，其创建人名叫巴门尼德（Parmenides）。这位哲人对运动充满了好奇，但在他看来，运动是一种自相矛盾的行为，它不可能是真实的，而一定是一个假相。为什么呢？因为巴门尼德认为世界上只有一个唯一的“存在”，既然是唯一的存在，它就不可能有运动。因为除了“存在”就是“非存在”，“存在”怎么可能移动到“非存在”里面去呢？所以他认为“存在”是绝对静止的，而运动是荒谬的，我们所理解的运动只是假相而已。</p>
+<p>阿喀琉斯（Achilles）是史诗《伊利亚特》里的希腊大英雄，以“捷足”而著称。<br>有一天他碰到一只乌龟，乌龟嘲笑他说：“别人都说你厉害，但我看你如果跟我赛跑，还追不上我。”<br>阿喀琉斯大笑说：“这怎么可能。我就算跑得再慢，速度也有你的10倍，哪会追不上你？”<br>乌龟说：“好，那我们假设一下。你离我有100米，你的速度是我的10倍。<br>现在你来追我了，但当你跑到我现在这个位置，也就是跑了100米的时候，<br>我也已经又向前跑了10米。当你再追到这个位置的时候，<br>我又向前跑了1米，你再追1米，我又跑了1/10米……<br>总之，你只能无限地接近我，但你永远也不能追上我。”</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-17T05:50:01.877Z" itemprop="dateUpdated">2017-11-17 13:50:01</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://godspace.cn">
+            <img src="/img/avatar.jpg" alt="Brandon.Xie">
+            Brandon.Xie
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/物理/">物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/量子/">量子</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&title=《连续性和悖论》 — GodSpace&pic=http://godspace.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&title=《连续性和悖论》 — GodSpace&source=A Full Stack Developer" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://godspace.cn/2017/11/17/The-paradox-of-continuity/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《连续性和悖论》 — GodSpace&url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&via=http://godspace.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/11/21/Monkeyrunner-Error/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Monkeyrunner Error</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2015/01/01/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hexo</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        谢谢打赏~
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Brandon.Xie &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&title=《连续性和悖论》 — GodSpace&pic=http://godspace.cn/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&title=《连续性和悖论》 — GodSpace&source=A Full Stack Developer" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://godspace.cn/2017/11/17/The-paradox-of-continuity/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《连续性和悖论》 — GodSpace&url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/&via=http://godspace.cn" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://godspace.cn/2017/11/17/The-paradox-of-continuity/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aO3KEQAxFUe9/0zhxMIFp7pPAZdSXaMqDac4EKv2+vvB1fFyffzn7TO4/u+fzLzdfMmTIeC3jWF7rA8jB6XPW4NMTZciQsQGDHL8+ch2ayX+tP1+8swwZMmSAg0nY5YmjDBkyZNzFqBWr69NlyJAho1PEkjZcP8V8vBaXIUPGCxm86/73nx+Zb8iQIeNVjCO8eFHK7+m8z8/TZMiQMZrBA1ytHO0Hbr78IUOGjNmMWrt/fWdnDMCXM4JfS4YMGa9l8MeRBlmaINaWNn75VoYMGaMZJNkioZO/Srq6wUcOMmTImMrgiWDaGuNpH4FdlMEyZMgYzUgDLnmhtDWWFrGoCpchQ8Y4RtroT4eRtSQyHkXIkCFjNOOu8EcKXT7gJEWvDBkydmCkAfGJxYt05eJiW0SGDBkbMNLH1eJ6GppbyxYyZMgYwSCrDzyMcnAKOP1WhgwZ2zDS2FVbGuv8BBdFrAwZMkYzOulg+gQ+mLy5iJUhQ8ZrGWlDjSeR92KKKxcyZMgYxOCJIAfUxgDpj4KabjJkyBjEqAXBWoDuD0SDeawMGTLGMdI2fdrK7zTgLsAyZMgYyjjCixeW/Nta4SpDhox9GJ0SNC1uaysdteGBDBky5jF4kK0tZHQK1KA9J0OGjA0YPPC1DsNNPTIekCFDhgyelqUhNR5PkufIkCFDBi5f01ZdDfBgaihDhox/zLjr+M46BR9typAhYzdGp3RcvzR/3VqiKUOGjA0Y3+5LiYf0dsIkAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'GodSpace';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'GodSpace';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
