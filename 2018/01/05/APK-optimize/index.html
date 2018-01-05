@@ -20,17 +20,19 @@
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭       资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，">
+    <meta name="description" content="###优化点  代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APK瘦身">
 <meta property="og:url" content="http://godspace.cn/2018/01/05/APK-optimize/index.html">
 <meta property="og:site_name" content="GodSpace">
-<meta property="og:description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭       资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，">
-<meta property="og:updated_time" content="2018-01-05T12:12:37.677Z">
+<meta property="og:description" content="###优化点  代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支">
+<meta property="og:image" content="http://godspace.cn/2018/01/05/APK-optimize/1.png">
+<meta property="og:updated_time" content="2018-01-05T12:26:26.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="APK瘦身">
-<meta name="twitter:description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭       资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，">
+<meta name="twitter:description" content="###优化点  代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支">
+<meta name="twitter:image" content="http://godspace.cn/2018/01/05/APK-optimize/1.png">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -153,6 +155,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工具方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">工具方法</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-APK-optimize"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -174,45 +183,67 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ul>
-<li>优化点<ol>
-<li>代码优化<br><em>压缩代码和移除无效代码和引用库</em><ul>
-<li><strong>minifyEnabled true</strong><br><code>ProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭</code></li>
+            <p>###优化点</p>
+<ul>
+<li>代码优化<br><em>压缩代码和移除无效代码和引用库</em><br> <strong>minifyEnabled true</strong><br><code>ProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭</code></li>
 </ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol>
+<ul>
 <li>资源优化<ul>
 <li>压缩图片<br>TinyPNG:    <a href="https://tinypng.com" target="_blank" rel="external">https://tinypng.com</a><br>Riot:        <a href="http://luci.criosweb.ro/riot" target="_blank" rel="external">http://luci.criosweb.ro/riot</a>  (推荐使用，支持对比、批量)</li>
 <li><strong>shrinkResources true</strong><br><code>将未使用的资源替换成小文件，比如图片使用1*1像素图片替换，资源文件只有头标识</code></li>
 </ul>
 </li>
-</ol>
+</ul>
 <hr>
-<ul>
-<li><p>工具方法</p>
-<ol>
+<h3 id="工具方法"><a href="#工具方法" class="headerlink" title="工具方法"></a>工具方法</h3><ul>
 <li>APK解压<br>查看资源文件大小（图片是否合理，是否需要多分辨率，是否需要多语言），无效资源是否被最小单元替换（未使用的图片是否黑点替换，未使用的xml资源是否只有头标识，如有这些，建议在源码中删除后再次编译）</li>
-<li><p>APK反编译<br><em>查看混淆是否成功，注意无引用的类是否被移除</em></p>
-<ul>
+<li><p>APK反编译<br> <em>查看混淆是否成功，注意无引用的类是否被移除</em></p>
+<ol>
 <li>下载jadx:  <a href="https://github.com/skylot/jadx" target="_blank" rel="external">https://github.com/skylot/jadx</a>   (推荐使用，包含apk，jar，xml等反编译, 其他工具dex2jar,jd-gui,luyten)</li>
 <li>添加jadx.bat到环境变量，或者直接切换到jadx目录</li>
 <li>jadx-gui.bat <em>*</em>.apk</li>
-</ul>
+</ol>
 </li>
-<li><p>ODEX反编译<br><em>odex文件优化</em></p>
-<ul>
+<li><p>ODEX反编译<br> <em>odex文件优化</em></p>
+<ol>
 <li>下载 baksmali smali: <a href="https://github.com/JesusFreke/smali" target="_blank" rel="external">https://github.com/JesusFreke/smali</a></li>
 <li>copy odex 到baksmali，smail 同目录，odex位于/apk路径/oat/arm64</li>
 <li>java -jar .\baksmali-*.jar deodex/de/&#215;&#215;&#215;.odex</li>
 <li>根据反编译的文件移除无需引用的类，注意V4, V7兼容包，第三方包(由于电视系统大多数为Android6.0以上系统，建议V4,V7兼容包可以只引用部分，比如RecycleView, CardView单独引用)<br>==注意事项：反编译过程中，注意查看是否依赖其他OAT文件，比如一般应用都依赖boot.oat。boot.oat文件位于/system/framework/arm  或者 /system/framework/arm64下==</li>
-</ul>
+</ol>
 </li>
 <li><p>删除无用资源</p>
+<ul>
+<li><p>Android Studio工程</p>
+<ul>
+<li>手动删除<ol>
+<li>选择需要清理的项目</li>
+<li>点击Android Studio上的Analyze菜单按钮</li>
+<li>选择Run Inspection by Name</li>
+<li>在出现的弹窗中输入unused resources</li>
+<li>下面的输出栏会输出没有用的资源文件，可以点击查看并删除无用的</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>自动删除<ol>
+<li>点击Android Studio上的Refactor</li>
+<li>选择remove unreused resources</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Eclipse工程<ol>
+<li>右键需要清理的项目<ol>
+<li>Android Tools</li>
+<li>Run Lint:Check For Common Errors</li>
+<li>这时就会打开Lint warning 视图，在这里就可以清理各种无用的资源、代码。<img src="/2018/01/05/APK-optimize/1.png" alt="1.png" title="">
 </li>
 </ol>
+</li>
+</ol>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -222,7 +253,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-01-05T12:12:37.677Z" itemprop="dateUpdated">2018-01-05 20:12:37</time>
+    最后更新时间：<time datetime="2018-01-05T12:26:26.920Z" itemprop="dateUpdated">2018-01-05 20:26:26</time>
 </span><br>
 
 
