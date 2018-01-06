@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支持对比、">
+    <meta name="description" content="优化点 代码优化 压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭 检查jar, so文件，移除无效引用，评估so是否只保留armable的资源 评估依赖库是否能provided编译 公共库拆分,比如网络库，图片库等不建议打包进公共库，在提供集成时，说明依赖">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APK瘦身">
 <meta property="og:url" content="http://godspace.cn/2018/01/05/APK-optimize/index.html">
 <meta property="og:site_name" content="GodSpace">
-<meta property="og:description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支持对比、">
+<meta property="og:description" content="优化点 代码优化 压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭 检查jar, so文件，移除无效引用，评估so是否只保留armable的资源 评估依赖库是否能provided编译 公共库拆分,比如网络库，图片库等不建议打包进公共库，在提供集成时，说明依赖">
 <meta property="og:image" content="http://godspace.cn/2018/01/05/APK-optimize/1.png">
-<meta property="og:updated_time" content="2018-01-05T12:30:40.141Z">
+<meta property="og:updated_time" content="2018-01-06T02:28:08.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="APK瘦身">
-<meta name="twitter:description" content="优化点 代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭   资源优化 压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支持对比、">
+<meta name="twitter:description" content="优化点 代码优化 压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭 检查jar, so文件，移除无效引用，评估so是否只保留armable的资源 评估依赖库是否能provided编译 公共库拆分,比如网络库，图片库等不建议打包进公共库，在提供集成时，说明依赖">
 <meta name="twitter:image" content="http://godspace.cn/2018/01/05/APK-optimize/1.png">
     
     <link rel="shortcut icon" href="/favicon.ico">
@@ -184,11 +184,17 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h3 id="优化点"><a href="#优化点" class="headerlink" title="优化点"></a>优化点</h3><ul>
-<li>代码优化<br><em>压缩代码和移除无效代码和引用库</em><br> <strong>minifyEnabled true</strong><br><code>ProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭</code></li>
+<li>代码优化 <code>压缩代码和移除无效代码和引用库</code><ul>
+<li><strong>minifyEnabled true</strong><br>ProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭</li>
+<li>检查jar, so文件，移除无效引用，评估so是否只保留armable的资源</li>
+<li>评估依赖库是否能provided编译</li>
+<li>公共库拆分,比如网络库，图片库等不建议打包进公共库，在提供集成时，说明依赖库，如应用已经引用则无需再次添加重复代码或者Jar</li>
+</ul>
+</li>
 </ul>
 <ul>
 <li>资源优化<ul>
-<li>压缩图片<br>TinyPNG:    <a href="https://tinypng.com" target="_blank" rel="external">https://tinypng.com</a><br>Riot:        <a href="http://luci.criosweb.ro/riot" target="_blank" rel="external">http://luci.criosweb.ro/riot</a>  (推荐使用，支持对比、批量)</li>
+<li>压缩图片<br>TinyPNG:    <a href="https://tinypng.com" target="_blank" rel="external">https://tinypng.com</a><br>Riot:        <a href="http://luci.criosweb.ro/riot" target="_blank" rel="external">http://luci.criosweb.ro/riot</a>  (推荐使用，支持预览、批量)</li>
 <li><strong>shrinkResources true</strong><br><code>将未使用的资源替换成小文件，比如图片使用1*1像素图片替换，资源文件只有头标识</code></li>
 </ul>
 </li>
@@ -250,7 +256,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-01-05T12:30:40.141Z" itemprop="dateUpdated">2018-01-05 20:30:40</time>
+    最后更新时间：<time datetime="2018-01-06T02:28:08.809Z" itemprop="dateUpdated">2018-01-06 10:28:08</time>
 </span><br>
 
 

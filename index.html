@@ -176,11 +176,11 @@
 
     
         优化点
-代码优化压缩代码和移除无效代码和引用库 minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭
-
-
-资源优化
-压缩图片TinyPNG:    https://tinypng.comRiot:        http://luci.criosweb.ro/riot  (推荐使用，支持...
+代码优化 压缩代码和移除无效代码和引用库
+minifyEnabled trueProGuard默认开启shrinker， 会检测和移除封装应用中未使用的类、字段、方法和属性。-dontshrink关闭
+检查jar, so文件，移除无效引用，评估so是否只保留armable的资源
+评估依赖库是否能provided编译
+公共库拆分,比如网络库，图片库等不建议打包进公共库，在提供集成时，说...
     
 
         <a href="/2018/01/05/APK-optimize/" class="post-more waves-effect waves-button">
